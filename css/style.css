@@ -1,7 +1,6 @@
 :root {
 	/*----- GLOBAL VARIABLES-----*/
 	--primary-font-color: (#0f0f0f);
-	--primary-font: ("Abel", sans-serif);
 	--background-color: (#f4f4f4);
 
 	/*----- MOBILE VARIABLES -----*/
@@ -15,48 +14,69 @@ html {
 	height: 100%;
 	width: 100%;
 	text-align: center;
-	font-family: var(--primary-font);
+	color: var(--primary-font-color);
+	font-family: "Abel";
 }
 
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background-color: var(--background-color);
 }
 
 /*---------------------------*/
 
 /* ---------- tabbar styling ---------- */
 .tabbar {
-	background-color: #000000;
-	opacity: 0.4;
+	background-color: rgba(0, 0, 0, 0.4);
+	height: 55px;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Style the links inside the navigation bar */
 .tabbar a {
 	display: inline-block;
-	color: var(--primary-font-color);
 	text-align: center;
-	padding: 20px 16px;
 	text-decoration: none;
 	font-size: 0.8em;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
 
+#tabbar-logo,
+#tabbar-profile,
+#tabbar-help {
+	height: 55px;
+	width: 100%;
+}
+
+#tabbar-profile,
+#tabbar-help {
+	height: 45px;
+	width: 100%;
+}
+
+.nav-link {
+	margin: 0 20px;
+}
+
 /* ---------- page styling ---------- */
 .page {
 	display: none;
-	/*min heigh is screen heigh minus height of tab and top bar */
-	min-height: calc(100vh - 55px);
-	/* padding equals height of tabbar and topbar */
-	padding: 0 0 55px 0;
+}
+
+#home {
+	background-image: url(../img/sky_3.png);
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
 }
 
 /*----- MEDIA QUERIES -----*/

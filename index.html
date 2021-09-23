@@ -17,14 +17,26 @@
 	<body>
 		<!-- tabbar navigation -->
 		<nav class="tabbar">
-			<a href="#/" class="nav-link">Profil</a>
-			<a href="#/" class="nav-link"></a>
-			<a href="#/" class="nav-link">Hjælp</a>
+			<a href="#/profile" class="nav-link"
+				><img id="tabbar-profile" src="img/man.png"
+			/></a>
+			<a href="#/" class="nav-link"
+				><img id="tabbar-logo" src="img/logo_white.png"
+			/></a>
+			<a href="#/help" class="nav-link"
+				><img id="tabbar-help" src="img/spg.png"
+			/></a>
 		</nav>
-		<section class="page"></section>
-		<section class="page"></section>
-		<section class="page"></section>
+		<section id="profile" class="page">
+			<h2>Profil</h2>
+		</section>
+		<section id="home" class="page"></section>
+		<section id="help" class="page">
+			<h2>Hjælp</h2>
+		</section>
+
 		<script src="js/router.js"></script>
+
 		<script src="js/main.js"></script>
 	</body>
 </html>
