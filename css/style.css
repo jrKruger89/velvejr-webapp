@@ -1,0 +1,65 @@
+:root {
+	/*----- GLOBAL VARIABLES-----*/
+	--primary-font-color: (#0f0f0f);
+	--primary-font: ("Abel", sans-serif);
+	--background-color: (#f4f4f4);
+
+	/*----- MOBILE VARIABLES -----*/
+
+	/*----- DESKTOP VARIABLES -----*/
+}
+
+/*----- GENERAL STYLING -----*/
+
+html {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	font-family: var(--primary-font);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: var(--background-color);
+}
+
+/*---------------------------*/
+
+/* ---------- tabbar styling ---------- */
+.tabbar {
+	background-color: #000000;
+	opacity: 0.4;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+
+/* Style the links inside the navigation bar */
+.tabbar a {
+	display: inline-block;
+	color: var(--primary-font-color);
+	text-align: center;
+	padding: 20px 16px;
+	text-decoration: none;
+	font-size: 0.8em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+/* ---------- page styling ---------- */
+.page {
+	display: none;
+	/*min heigh is screen heigh minus height of tab and top bar */
+	min-height: calc(100vh - 55px);
+	/* padding equals height of tabbar and topbar */
+	padding: 0 0 55px 0;
+}
+
+/*----- MEDIA QUERIES -----*/
+
+@media (min-width: 749px) {
+}
