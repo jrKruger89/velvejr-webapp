@@ -1,122 +1,130 @@
 :root {
-	/*----- GLOBAL VARIABLES-----*/
-	--primary-font-color: #0f0f0f;
-	--background-color: #f4f4f4;
-	--primary-blue: #2b81b9;
-	--dark-blue: #567373;
-	--light-blue: #0090ff;
+  /*----- GLOBAL VARIABLES-----*/
+  --primary-font-color: #0f0f0f;
+  --background-color: #f4f4f4;
+  --primary-blue: #2b81b9;
+  --dark-blue: #567373;
+  --light-blue: #0090ff;
 
-	/*----- MOBILE VARIABLES -----*/
+  /*----- MOBILE VARIABLES -----*/
 
-	/*----- DESKTOP VARIABLES -----*/
+  /*----- DESKTOP VARIABLES -----*/
 }
 
 /*----- GENERAL STYLING -----*/
 
 html {
-	height: 100%;
-	width: 100%;
-	text-align: center;
-	color: var(--primary-font-color);
-	font-family: "Abel";
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: var(--primary-font-color);
+  font-family: "Abel";
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
-	display: none;
+  display: none;
 }
 
 h2 {
-	font-weight: lighter;
+  font-weight: lighter;
 }
 
 ul {
-	list-style-type: none;
-	text-align: left;
+  list-style-type: none;
+  text-align: left;
 }
 
-#showmore {
-	color: var(--primary-blue);
-	background-color: transparent;
-	border: none;
+.showmore {
+  color: var(--primary-blue);
+  background-color: transparent;
+  border: none;
+}
+
+.active,
+.p_showmore:hover {
+  background-color: #ccc;
+}
+
+.p_showmore {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
 
 .button {
-	color: var(--background-color);
-	background-color: var(--primary-blue);
-	border: none;
-	padding: 6px;
-	border-radius: 8px;
-	font-family: "Abel";
+  color: var(--background-color);
+  background-color: var(--primary-blue);
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  font-family: "Abel";
 }
 
 .page {
-	background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 /*---------------------------*/
 
 /* ---------- tabbar styling ---------- */
 .tabbar {
-	background-color: rgba(0, 0, 0, 0.4);
-	height: 55px;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 55px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Style the links inside the navigation bar */
 .tabbar a {
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	font-size: 0.8em;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 #tabbar-logo {
-	height: 55px;
-	width: 100%;
+  height: 55px;
+  width: 100%;
 }
 
 #tabbar-profile,
 #tabbar-help {
-	height: 45px;
-	width: 100%;
+  height: 45px;
+  width: 100%;
 }
 
 .nav-link {
-	margin: 0 20px;
+  margin: 0 20px;
 }
 
 /* ---------- page styling ---------- */
 .page {
-	display: none;
+  display: none;
 }
 
 #home {
-	background-image: url(../img/sky_2.png);
-	background-position: center;
-	background-size: cover;
-	min-height: 100vh;
+  background-image: url(../img/sky_2.png);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 /*----- help page -----*/
-
-.p_showmore {
-	display: none;
-}
 
 /*----- MEDIA QUERIES -----*/
 
