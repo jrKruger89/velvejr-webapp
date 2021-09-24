@@ -1,7 +1,10 @@
 :root {
 	/*----- GLOBAL VARIABLES-----*/
-	--primary-font-color: (#0f0f0f);
-	--background-color: (#f4f4f4);
+	--primary-font-color: #0f0f0f;
+	--background-color: #f4f4f4;
+	--primary-blue: #2b81b9;
+	--dark-blue: #567373;
+	--light-blue: #0090ff;
 
 	/*----- MOBILE VARIABLES -----*/
 
@@ -22,6 +25,38 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+h1 {
+	display: none;
+}
+
+h2 {
+	font-weight: lighter;
+}
+
+ul {
+	list-style-type: none;
+	text-align: left;
+}
+
+#showmore {
+	color: var(--primary-blue);
+	background-color: transparent;
+	border: none;
+}
+
+.button {
+	color: var(--background-color);
+	background-color: var(--primary-blue);
+	border: none;
+	padding: 6px;
+	border-radius: 8px;
+	font-family: "Abel";
+}
+
+.page {
+	background-color: var(--background-color);
 }
 
 /*---------------------------*/
@@ -50,9 +85,7 @@ body {
 	text-transform: uppercase;
 }
 
-#tabbar-logo,
-#tabbar-profile,
-#tabbar-help {
+#tabbar-logo {
 	height: 55px;
 	width: 100%;
 }
@@ -73,10 +106,16 @@ body {
 }
 
 #home {
-	background-image: url(../img/sky_3.png);
+	background-image: url(../img/sky_2.png);
 	background-position: center;
 	background-size: cover;
 	min-height: 100vh;
+}
+
+/*----- help page -----*/
+
+.p_showmore {
+	display: none;
 }
 
 /*----- MEDIA QUERIES -----*/
