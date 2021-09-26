@@ -19,6 +19,7 @@ html {
   text-align: center;
   color: var(--primary-font-color);
   font-family: "Abel";
+  background-color: var(--background-color);
 }
 
 body {
@@ -40,22 +41,11 @@ ul {
   text-align: left;
 }
 
-.showmore {
-  color: var(--primary-blue);
-  background-color: transparent;
-  border: none;
-}
-
-.active,
-.p_showmore:hover {
-  background-color: #ccc;
-}
-
-.p_showmore {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
+li,
+p {
+  line-height: 50px;
+  font-size: 16px;
+  margin: 0;
 }
 
 .button {
@@ -65,10 +55,17 @@ ul {
   padding: 6px;
   border-radius: 8px;
   font-family: "Abel";
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.page {
-  background-color: var(--background-color);
+.whitespace {
+  height: 25px;
+}
+@media (min-width: 750px) {
+  .whitespace {
+    display: none;
+  }
 }
 
 /*---------------------------*/
@@ -115,6 +112,7 @@ ul {
 /* ---------- page styling ---------- */
 .page {
   display: none;
+  min-height: calc(100vh - 55px);
 }
 
 #home {
@@ -126,7 +124,36 @@ ul {
 
 /*----- help page -----*/
 
+.showmore {
+  color: var(--primary-blue);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.p_showmore {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  line-height: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 750px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .p_showmore {
+    width: 270px;
+  }
+}
+
 /*----- MEDIA QUERIES -----*/
 
-@media (min-width: 749px) {
+@media (min-width: 750px) {
 }

@@ -28,110 +28,120 @@
         ><img id="tabbar-help" src="img/spg.png"
       /></a>
     </nav>
+
+    <!-- ---------------------------------------------------- home page ---------------------------------------------------- -->
+    <section id="home" class="page">
+      <p id="by">Viser vejr for</p>
+
+      <input
+        id="search_city"
+        type="search"
+        placeholder="Indtast by"
+        onkeyup="search(this.value)"
+      />
+      <div id="time"></div>
+      <h2></h2>
+    </section>
+
+    <!-- ---------------------------------------------------- profile page ---------------------------------------------------- -->
     <section id="profile" class="page">
       <h2>Profil</h2>
     </section>
-    <section id="home" class="page"></section>
 
-    <!-- help page -->
+    <!-- ---------------------------------------------------- help page ---------------------------------------------------- -->
     <section id="help" class="page">
-      <h2>Hjælp</h2>
-      <!-- --------------- HUSK AT INDSÆTTE LINK TIL WEB APP TUTORIAL HERUNDER I A HREF'EN --------------- -->
-      <a href=""
-        ><button class="button tutorial">Se Web App tutorial</button></a
-      >
-      <h2>FAQ</h2>
+      <div class="container">
+        <div class="flex">
+          <h2>Hjælp</h2>
+          <!-- --------------- HUSK AT INDSÆTTE LINK TIL WEB APP TUTORIAL HERUNDER I A HREF'EN --------------- -->
+          <a href=""
+            ><button class="button tutorial">Se Web App tutorial</button></a
+          >
+        </div>
+        <div class="whitespace"></div>
+        <div class="flex">
+          <h2>FAQ</h2>
 
-      <ul>
-        <li>
-          Skal jeg oprette en profil, for at bruge VelVejr?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            Nej, du kan benytte VelVejr uden at logge ind. Men det er en fordel
-            for dig, for at få en endnu mere præcis og personlig vejledning.
-          </p>
-        </li>
+          <ul>
+            <li>
+              Skal jeg oprette en profil, for at bruge VelVejr?
+              <button type="button" class="showmore">&#10148;</button>
 
-        <li>
-          Kan jeg downloade Velvejr som en app?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            Nej, VelVejr er en webapp og kan derfor ikke downloades. I stedet
-            anbefaler vi,at du gemmer sitet ned som et bogmærke eller føjer det
-            til din hjemmeskærm i browseren, så VelVejr er let og hurtig at
-            tilgå.
-          </p>
-        </li>
+              <p class="p_showmore">
+                Nej, du kan benytte VelVejr uden at logge ind. Men det er en
+                fordel for dig, for at få en endnu mere præcis og personlig
+                vejledning.
+              </p>
+            </li>
 
-        <li>
-          Hvad koster VelVejr?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            VelVejr er en gratis gadget, som ikke koster noget, om du opretter
-            en profil eller ej.
-          </p>
-        </li>
+            <li>
+              Kan jeg downloade Velvejr som en app?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                Nej, VelVejr er en webapp og kan derfor ikke downloades. I
+                stedet anbefaler vi,at du gemmer sitet ned som et bogmærke eller
+                føjer det til din hjemmeskærm i browseren, så VelVejr er let og
+                hurtig at tilgå.
+              </p>
+            </li>
 
-        <li>
-          Hvor troværdig er VelVejr's vejrprognose?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">VelVejr's vejrprognose henter data fra ----,</p>
-        </li>
+            <li>
+              Hvad koster VelVejr?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                VelVejr er en gratis gadget, som ikke koster noget, om du
+                opretter en profil eller ej.
+              </p>
+            </li>
 
-        <li>
-          Hvad skal mine oplysninger bruges til?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            Oplysningerne hjælper VelVejr til at give en mere præcis og
-            personlig vejledning til dig.
-          </p>
-        </li>
+            <li>
+              Hvor troværdig er VelVejr's vejrprognose?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                VelVejr's vejrprognose henter data fra ----,
+              </p>
+            </li>
 
-        <li>
-          Hvilke personoplysninger vil blive brugt?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            Vi behandler kun personoplysninger om dig, som du giver os for at
-            kunne opfylde vores aftale i forbindelse med dig.
-          </p>
-        </li>
+            <li>
+              Hvad skal mine oplysninger bruges til?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                Oplysningerne hjælper VelVejr til at give en mere præcis og
+                personlig vejledning til dig.
+              </p>
+            </li>
 
-        <li>
-          Hvordan behandles mine oplysninger?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            Dine personlige oplysninger vil være omfattet af beskyttelsen i
-            persondataforordningen. Sletter du din profil, vil dine persondata
-            blive destrueret. Indtil da er VelVejr ansvarlig for, at dine
-            personoplysninger opbevares sikkert.
-          </p>
-        </li>
+            <li>
+              Hvilke personoplysninger vil blive brugt?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                Vi behandler kun personoplysninger om dig, som du giver os for
+                at kunne opfylde vores aftale i forbindelse med dig.
+              </p>
+            </li>
 
-        <li>
-          Hvordan sletter jeg min profil?
-          <button type="button" onclick="showMoreBtn()" class="showmore">
-            &#10148;
-          </button>
-          <p class="p_showmore">
-            Du kan slette din profil ved at trykke på smiley ikonet og “slet
-            profil” eller <a href="">klik her</a>.
-          </p>
-        </li>
-      </ul>
+            <li>
+              Hvordan behandles mine oplysninger?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                Dine personlige oplysninger vil være omfattet af beskyttelsen i
+                persondataforordningen. Sletter du din profil, vil dine
+                persondata blive destrueret. Indtil da er VelVejr ansvarlig for,
+                at dine personoplysninger opbevares sikkert.
+              </p>
+            </li>
+
+            <li>
+              Hvordan sletter jeg min profil?
+              <button type="button" class="showmore">&#10148;</button>
+              <p class="p_showmore">
+                Du kan slette din profil ved at trykke på smiley ikonet og “slet
+                profil” eller <a href="">klik her</a>.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <script src="js/router.js"></script>
