@@ -1,6 +1,7 @@
 "use strict";
 
 import { getLocation } from "./weathermodule.js";
+import "./router.js";
 getLocation();
 
 // Open the full screen search box
@@ -26,7 +27,7 @@ buttons.forEach((item) => {
   });
 });
 
-// ------------------------------- Home page search/get location -------------------------------
+// -------------------------------------- Home page search/get location ----------------------------------------
 
 //current date and time
 const monthNames = [
@@ -61,3 +62,30 @@ let date = `${weekDays[today.getDay()]} d. ${today.getDate()}. ${
 } ${today.getFullYear()}`;
 var dateTime = date + " kl " + time;
 document.getElementById("time").innerHTML = dateTime;
+
+// avatar slideshow - edit profile
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+
+window.showSlides = () => showSlides();
+document.querySelector(".prev").onclick = () => plusSlides(-1);
+document.querySelector(".next").onclick = () => plusSlides(1);

@@ -70,28 +70,108 @@
 
     <!-- ------------------------------------------------- profile page ------------------------------------------------- -->
     <section id="profile" class="page">
+      <a href="#/" class="nav-link">
+        <button class="button button_back">Tilbage</button></a
+      ><br /><br />
       <h2>Profil</h2>
-      <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
-      <div class=""
-      <a href="#/edit_profile">Rediger profil</a><br /><br />
-      <a href="#/edit_notifications">Rediger notifikationer</a><br /><br />
-      <a class="delete_profile_link" href="#/edit_delete_profile"
-        >Slet profil</a
-      >
+      <div class="profile_page">
+        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+        <div class="profile_link_div">
+          <a href="#/edit_profile" class="nav-link">Rediger profil</a><br />
+          <a href="#/edit_notifications" class="nav-link"
+            >Rediger notifikationer</a
+          >
+          <p class="delete_profile_link"><a href="#/edit_delete_profile" class="nav-link" >Slet profil</a></p>
+        </div>
+      </div>
     </section>
 
     <!-- ------------------------------------------- profile page - edit profile ---------------------------------------- -->
-    <section id="edit_profile" class="sub_page"></section>
+    <section id="edit_profile" class="page">
+      <a href="#/profile" class="nav-link">
+        <button class="button button_back">Tilbage</button></a
+      ><br /><br />
+      <h2>Rediger profil</h2>
+      <div class="slideshow">
+        <div class="slides">
+      <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+        </div>
+        <div class="slides">
+      <img src="img/avatars/man_2_sun.png" class="avatar" alt="avatar icon" />
+      </div>
+      <div class="slides">
+      <img src="img/avatars/woman_1_sun.png" class="avatar" alt="avatar icon" />
+      </div>
+      <div class="slides">
+      <img src="img/avatars/woman_2_sun.png" class="avatar" alt="avatar icon" />
+      </div>
+
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+      </div>
+    </section>
 
     <!-- ---------------------------------------- profile page - edit notifications ---------------------------------------- -->
-    <section id="edit_notifications" class="sub_page"></section>
+    <section id="edit_notifications" class="page">
+      <a href="#/profile" class="nav-link">
+        <button class="button button_back">Tilbage</button></a
+      ><br /><br />
+      <h2>Rediger notifikationer</h2>
+      <div class="edit_notifications_page profile_page">
+        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+        <div class="profile_link_div">
+        <p>Jeg vil modtage notifikationer om</p>
+        <label class="container"><p>Dagens beklædning</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Solen står op</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Solen går ned</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Det bliver stjerneklart</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Høje pollental</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Højt UV-ideks</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Islag</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        </label>
+        <label class="container"><p>Ekstremt vejr</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"><p>Dagens tip</p>
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+        
+        <div class="whitespace_bottom"></div>
+    </section>
 
     <!-- ------------------------------------------- profile page - delte profile ----------------------------------------- -->
-    <section id="edit_delete_profile" class="sub_page"></section>
+    <section id="edit_delete_profile" class="page"></section>
 
     <!-- ---------------------------------------------------- help page ---------------------------------------------------- -->
     <section id="help" class="page">
-      <div class="container">
+      <a href="#/" class="nav-link">
+        <button class="button button_back">Tilbage</button></a
+      ><br /><br />
+      <div class="container_help">
         <div class="flex">
           <h2>Hjælp</h2>
           <!-- --------------- HUSK AT INDSÆTTE LINK TIL WEB APP TUTORIAL HERUNDER I A HREF'EN --------------- -->
@@ -189,8 +269,6 @@
       © Copyright 2021 Maja Wennerwald, Camilla Nørgaard & Jesper Krüger. All
       rights reserved.
     </footer>
-
-    <script src="js/router.js"></script>
 
     <script src="./js/main.js" type="module"></script>
   </body>

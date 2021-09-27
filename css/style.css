@@ -63,12 +63,34 @@ p {
   cursor: pointer;
 }
 
+.button_back {
+  float: left;
+  margin: 8px 0 0 10px;
+}
+
 .whitespace {
   height: 25px;
 }
+.whitespace_bottom{
+  height: 60px;
+}
+
 @media (min-width: 750px) {
   .whitespace {
     display: none;
+  }
+
+  h2{
+    font-size: 35px;
+  }
+
+  li, p{
+    font-size: 22px;
+  }
+
+  .button{
+    font-size: 22px;
+    padding: 8px;
   }
 }
 
@@ -86,6 +108,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
 }
 
 /* Style the links inside the navigation bar */
@@ -141,18 +164,19 @@ p {
   line-height: 20px;
 }
 
-.container {
+.container_help {
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 750px) {
-  .container {
+  .container_help {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   .p_showmore {
     width: 270px;
+    line-height: 30px;
   }
 }
 /*----- profile page -----*/
@@ -162,9 +186,145 @@ p {
   margin: auto;
 }
 
-.delete_profile_link {
-  float: bottom;
+.profile_link_div{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
 }
+
+.profile_link_div a{
+  text-decoration: none;
+  color: var(--primary-font-color);
+  cursor: pointer;
+  line-height: 50px;
+  font-size: 16px;
+  margin: 0;
+}
+.delete_profile_link{
+  margin-top: 140px;
+}
+
+@media (min-width: 750px) {
+.avatar {
+  width: 40%;
+  margin: 0;
+}
+.profile_link_div{
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+  .profile_link_div a{
+  font-size: 22px;
+  }
+
+.profile_page{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  height: calc(100vh - 170px);
+  align-items: center;
+}
+.delete_profile_link{
+  margin-top: 200px;
+}
+}
+/*----- edit profile page -----*/
+.slides {
+  display: none
+}
+.slideshow{
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+@media (min-width: 750px) {
+.prev, .next {
+  width: 60%;
+  text-align: left;
+}
+}
+
+
+
+
+
+/*----- notification page -----*/
+.edit_notifications_page{
+  margin-bottom: 50px;
+}
+  
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  line-height: 30px;
+  text-align: left;
+  margin: 0 auto;
+  width: 90%;
+}
+  
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+  
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container input:checked ~ .checkmark {
+  background-color: var(--primary-blue);
+}
+
+.container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--background-color);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+/* ----------- 
 
 /*----- M
 @media (min-width: 750px) {
