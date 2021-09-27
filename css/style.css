@@ -28,6 +28,10 @@ body {
   box-sizing: border-box;
 }
 
+footer{
+  display: none;
+}
+
 h1 {
   display: none;
 }
@@ -123,7 +127,6 @@ p {
 }
 
 /*----- help page -----*/
-
 .showmore {
   color: var(--primary-blue);
   background-color: transparent;
@@ -152,8 +155,94 @@ p {
     width: 270px;
   }
 }
+/*----- profile page -----*/
+.avatar {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
 
-/*----- MEDIA QUERIES -----*/
+.delete_profile_link {
+  float: bottom;
+}
 
+/*----- M
 @media (min-width: 750px) {
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.openBtn {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.openBtn:hover {
+  background: #bbb;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay .input_search[type="text"] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+.overlay .input_search [type="text"]:hover {
+  background: #f1f1f1;
+}
+
+.overlay .button_search {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay .button_search:hover {
+  background: #bbb;
 }

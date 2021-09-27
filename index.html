@@ -33,20 +33,61 @@
     <section id="home" class="page">
       <p id="by">Viser vejr for</p>
 
-      <input
+      <div id="time"></div>
+      <p id="temp">Aktuel temp.</p>
+      <h2></h2>
+      <!--<input
         id="search_city"
         type="search"
         placeholder="Indtast by"
         onkeyup="search(this.value)"
-      />
-      <div id="time"></div>
-      <h2></h2>
+      />-->
+      <div id="myOverlay" class="overlay">
+        <button
+          class="closebtn"
+          onclick="closeSearch()"
+          title="Close Overlay"
+        ></button>
+        <div class="overlay-content">
+          <form>
+            <input
+              class="input_search"
+              type="text"
+              placeholder="Search.."
+              name="search"
+            />
+            <button class="button_search" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <button class="button_search" class="openBtn" onclick="openSearch()">
+        Open Search Box
+      </button>
     </section>
 
-    <!-- ---------------------------------------------------- profile page ---------------------------------------------------- -->
+    <!-- ------------------------------------------------- profile page ------------------------------------------------- -->
     <section id="profile" class="page">
       <h2>Profil</h2>
+      <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+      <div class=""
+      <a href="#/edit_profile">Rediger profil</a><br /><br />
+      <a href="#/edit_notifications">Rediger notifikationer</a><br /><br />
+      <a class="delete_profile_link" href="#/edit_delete_profile"
+        >Slet profil</a
+      >
     </section>
+
+    <!-- ------------------------------------------- profile page - edit profile ---------------------------------------- -->
+    <section id="edit_profile" class="sub_page"></section>
+
+    <!-- ---------------------------------------- profile page - edit notifications ---------------------------------------- -->
+    <section id="edit_notifications" class="sub_page"></section>
+
+    <!-- ------------------------------------------- profile page - delte profile ----------------------------------------- -->
+    <section id="edit_delete_profile" class="sub_page"></section>
 
     <!-- ---------------------------------------------------- help page ---------------------------------------------------- -->
     <section id="help" class="page">
@@ -143,6 +184,11 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      © Copyright 2021 Maja Wennerwald, Camilla Nørgaard & Jesper Krüger. All
+      rights reserved.
+    </footer>
 
     <script src="js/router.js"></script>
 
