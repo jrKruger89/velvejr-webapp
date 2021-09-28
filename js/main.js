@@ -13,6 +13,9 @@ function openSearch() {
 function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
+
+window.openSearch = () => openSearch();
+window.closeSearch = () => closeSearch();
 // ------------------------------- Help page show/hide answer with rotating arrow -------------------------------
 const buttons = Array.from(document.querySelectorAll(".showmore"));
 buttons.forEach((item) => {
@@ -62,6 +65,15 @@ let date = `${weekDays[today.getDay()]} d. ${today.getDate()}. ${
 } ${today.getFullYear()}`;
 var dateTime = date + " kl " + time;
 document.getElementById("time").innerHTML = dateTime;
+
+var greeting = "";
+
+if (time >= 17 && time <= 23) greeting = "Go' aften";
+else if (time >= 0 && time <= 5) greeting = "Go' nat";
+else if (time >= 6 && time <= 11) greeting = "Go' morgen";
+else if (time >= 12 && time <= 16) greeting = "Go' eftermiddag";
+
+document.querySelector(".greeting").innerHTML = greeting;
 
 // avatar slideshow - edit profile
 var slideIndex = 1;

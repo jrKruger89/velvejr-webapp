@@ -25,4 +25,25 @@ let setPosition = (position) => {
 export let appendWeatherData = (data) => {
   document.getElementById("by").innerHTML += ` ${data.name}`;
   document.getElementById("temp").innerHTML += ` ${data.main["temp"]}ºC`;
+
+  document.querySelector(".sun_up").innerHTML += new Date(
+    data.sys["sunrise"] * 1e3
+  )
+    .toISOString()
+    .slice(-13, -5);
+
+  document.querySelector(".sun_down").innerHTML += new Date(
+    data.sys["sunset"] * 1e3
+  )
+    .toISOString()
+    .slice(-13, -5);
+
+  let max_temp = Array.from(document.querySelectorAll(".max"));
+  max_temp.forEach((item) => {
+    item.innerHTML += ` ${data.main["temp_max"]}ºC`;
+  });
+  let chill = Array.from(document.querySelectorAll(".chill"));
+  chill.forEach((item) => {
+    item.innerHTML += ` ${data.main["feels_like"]}ºC`;
+  });
 };

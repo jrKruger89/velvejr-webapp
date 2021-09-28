@@ -31,41 +31,164 @@
 
     <!-- ---------------------------------------------------- home page ---------------------------------------------------- -->
     <section id="home" class="page">
-      <p id="by">Viser vejr for</p>
-
-      <div id="time"></div>
-      <p id="temp">Aktuel temp.</p>
-      <h2></h2>
-      <!--<input
-        id="search_city"
-        type="search"
-        placeholder="Indtast by"
-        onkeyup="search(this.value)"
-      />-->
-      <div id="myOverlay" class="overlay">
-        <button
-          class="closebtn"
-          onclick="closeSearch()"
-          title="Close Overlay"
-        ></button>
-        <div class="overlay-content">
-          <form>
-            <input
-              class="input_search"
-              type="text"
-              placeholder="Search.."
-              name="search"
-            />
-            <button class="button_search" type="submit">
-              <i class="fa fa-search"></i>
-            </button>
-          </form>
+      <div class="page-width">
+        <div class="whitespace"></div>
+        <div class="flex">
+          <p id="by">Viser vejr for</p>
+          <!-- search for city -->
+          <button class="button_search openBtn" onclick="openSearch()">
+            <img class="search-icon" src="img/search-icon.png" />
+          </button>
         </div>
-      </div>
+        <div id="myOverlay" class="overlay">
+          <button
+            class="closebtn"
+            onclick="closeSearch()"
+            title="Close Overlay"
+          >
+            &#215;
+          </button>
+          <div class="overlay-content">
+            <form class="flex">
+              <input
+                class="input_search"
+                type="text"
+                placeholder="Indtast bynavn"
+                name="search"
+              />
+              <button class="button_search" type="submit">
+                Søg
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
 
-      <button class="button_search" class="openBtn" onclick="openSearch()">
-        Open Search Box
-      </button>
+        <!-- time and temp -->
+        <div id="time"></div>
+        <p id="temp">Aktuel temp.</p>
+        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+
+        <!-- arrow - prev day/next day -->
+        <a href="#/homePlusOne" class="nav-link"
+          ><button class="next_day right">
+            &#8250;
+            <p class="small_p">I morgen</p>
+          </button>
+        </a>
+        <a href="#/homeMinusOne" class="nav-link"
+          ><button class="prev_day left">
+            &#8249;
+            <p class="small_p">I går</p>
+          </button>
+        </a>
+        <!-- gretting + name -->
+        <p class="greeting"></p>
+        <!-- <p class="hello_name"></p> -->
+
+        <!-- Husk xxxxx insættes her -->
+        <h2>Lorum ipsum</h2>
+
+        <!-- max and chill temp for the day -->
+        <p class="max">Højest:</p>
+        <p class="chill">Føles som:</p>
+        <!-- <p class="important"></p> -->
+        <br />
+
+        <!-- dagens tip indsættes her -->
+        <p><b>Dagens tip:</b></p>
+        <p class="daytip">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore...
+        </p>
+        <br />
+
+        <!-- Read more about the weather -->
+        <div class="read_more_section">
+          <b>Læs mere om dagens vejr</b>
+          <button type="button" class="showmore">&#10148;</button>
+          <div class="p_showmore">
+            <br />
+            <div class="read_more_div">
+              <div>
+                <div class="sun_up"><b>Sol op: </b></div>
+                <div class="sun_down"><b>Sol ned: </b></div>
+                <div class="max"><b>Max temp:</b></div>
+                <div class="min"><b>Min. temp:</b></div>
+                <div class="chill"><b>Føles som:</b></div>
+                <div class="night"><b>Nattetemp.:</b></div>
+                <div class="risk_of_rain"><b>Risiko for nedbør:</b></div>
+              </div>
+              <div>
+                <div class="rain"><b>Nedbør:</b></div>
+                <div class="wind"><b>Vind:</b></div>
+                <div class="gusts"><b>Vindstød:</b></div>
+                <div class="humidity"><b>Lufttugtighed:</b></div>
+                <div class="pollen"><b>Pollen:</b></div>
+                <div class="uv"><b>U.V-indeks:</b></div>
+                <div class="visibility"><b>Sigtbarhed:</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="whitespace_bottom_large"></div>
+      </div>
+    </section>
+    <!-- ------------------------------------------------- home page - prev day ------------------------------------------------- -->
+    <section id="homeMinusOne" class="page">
+      <a href="#/" class="nav-link"
+        ><button class="next_day right">
+          &#8250;
+          <p class="small_p">I dag</p>
+        </button>
+      </a>
+
+      margin top = pilene forsvinder
+    </section>
+    <!-- ------------------------------------------------- home page - next day ------------------------------------------------- -->
+    <section id="homePlusOne" class="page">
+      <a href="#/homePlusTwo" class="nav-link"
+        ><button class="next_day right">
+          &#8250;
+          <p class="small_p">Næste dag</p>
+        </button>
+      </a>
+
+      <a href="#/" class="nav-link"
+        ><button class="prev_day left">
+          &#8249;
+          <p class="small_p">I dag</p>
+        </button>
+      </a>
+      margin top = pilene forsvinder
+    </section>
+
+    <!-- ------------------------------------------------- home page - next next page -------------------------------------------- -->
+    <section id="homePlusTwo" class="page">
+      <a href="#/homePlusThree" class="nav-link"
+        ><button class="next_day right">
+          &#8250;
+          <p class="small_p">Næste dag</p>
+        </button>
+      </a>
+
+      <a href="#homePlusOne" class="nav-link"
+        ><button class="prev_day left">
+          &#8249;
+          <p class="small_p">Forrige dag</p>
+        </button>
+      </a>
+    </section>
+
+    <!-- ------------------------------------------------- home page - next next next page -------------------------------------------- -->
+    <section id="homePlusThree" class="page">
+      <a href="#/homePlusTwo" class="nav-link"
+        ><button class="prev_day left">
+          &#8249;
+          <p class="small_p">Forrige dag</p>
+        </button>
+      </a>
     </section>
 
     <!-- ------------------------------------------------- profile page ------------------------------------------------- -->
@@ -73,15 +196,23 @@
       <a href="#/" class="nav-link">
         <button class="button button_back">Tilbage</button></a
       ><br /><br />
-      <h2>Profil</h2>
-      <div class="profile_page">
-        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
-        <div class="profile_link_div">
-          <a href="#/edit_profile" class="nav-link">Rediger profil</a><br />
-          <a href="#/edit_notifications" class="nav-link"
-            >Rediger notifikationer</a
-          >
-          <p class="delete_profile_link"><a href="#/edit_delete_profile" class="nav-link" >Slet profil</a></p>
+      <div class="page-width">
+        <h2>Profil</h2>
+        <div class="profile_page">
+          <img
+            src="img/avatars/man_1_sun.png"
+            class="avatar"
+            alt="avatar icon"
+          />
+          <div class="profile_link_div">
+            <a href="#/edit_profile" class="nav-link">Rediger profil</a><br />
+            <a href="#/edit_notifications" class="nav-link"
+              >Rediger notifikationer</a
+            >
+            <p class="delete_profile_link">
+              <a href="#/edit_delete_profile" class="nav-link">Slet profil</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -91,23 +222,106 @@
       <a href="#/profile" class="nav-link">
         <button class="button button_back">Tilbage</button></a
       ><br /><br />
-      <h2>Rediger profil</h2>
-      <div class="slideshow">
-        <div class="slides">
-      <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
-        </div>
-        <div class="slides">
-      <img src="img/avatars/man_2_sun.png" class="avatar" alt="avatar icon" />
-      </div>
-      <div class="slides">
-      <img src="img/avatars/woman_1_sun.png" class="avatar" alt="avatar icon" />
-      </div>
-      <div class="slides">
-      <img src="img/avatars/woman_2_sun.png" class="avatar" alt="avatar icon" />
-      </div>
+      <div class="page-width">
+        <h2>Rediger profil</h2>
+        <div class="profile_page">
+          <div>
+            <div class="slideshow">
+              <div class="slides">
+                <img
+                  src="img/avatars/man_1_sun.png"
+                  class="avatar"
+                  alt="avatar icon"
+                />
+              </div>
+              <div class="slides">
+                <img
+                  src="img/avatars/man_2_sun.png"
+                  class="avatar"
+                  alt="avatar icon"
+                />
+              </div>
+              <div class="slides">
+                <img
+                  src="img/avatars/woman_1_sun.png"
+                  class="avatar"
+                  alt="avatar icon"
+                />
+              </div>
+              <div class="slides">
+                <img
+                  src="img/avatars/woman_2_sun.png"
+                  class="avatar"
+                  alt="avatar icon"
+                />
+              </div>
+              <div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile_link_div">
+            <form>
+              <input type="text" id="name" placeholder="Navn" />
+            </form>
+            <div class="whitespace"></div>
+            <div class="emoji_section">
+              Vælg de emojis der passer på dit yndlingsvejr
+              <button type="button" class="showmore">&#10148;</button>
+              <div class="p_showmore">
+                <div class="emoji_flex">
+                  <div class="emoji">🔥</div>
+                  <div class="emoji">🥵</div>
+                  <div class="emoji">☀️</div>
+                  <div class="emoji">🌤</div>
+                  <div class="emoji">🌦</div>
+                  <div class="emoji">☁️</div>
+                </div>
+                <div class="emoji_flex">
+                  <div class="emoji">❄️</div>
+                  <div class="emoji">🥶</div>
+                  <div class="emoji">☃️</div>
+                  <div class="emoji">💨</div>
+                  <div class="emoji">☔️</div>
+                  <div class="emoji">⛈</div>
+                </div>
+              </div>
+            </div>
+            <div class="whitespace"></div>
 
-      <a class="prev">&#10094;</a>
-      <a class="next">&#10095;</a>
+            <div class="height">
+              <label class="left" for="weather">Jeg føler ofte at</label>
+              <select name="weather" id="weather">
+                <option value="fryser"><p>Jeg fryser</p></option>
+                <option value="varmt"><p>Jeg har det for varmt</p></option>
+                <option value="tilpas"><p>Jeg har det tilpas</p></option>
+              </select>
+            </div>
+
+            <div class="height">
+              <label class="left" for="weather"
+                >Jeg har nemt ved at blive solskoldet</label
+              >
+              <select name="weather" id="sun_burning">
+                <option value="bil"><p>Ja</p></option>
+                <option value="cykel"><p>Nej</p></option>
+              </select>
+            </div>
+            <div class="height">
+              <label class="left" for="weather"
+                >Jeg transpoterer mig oftest via</label
+              >
+              <select name="weather" id="sun_burning">
+                <option value="bil"><p>Bil</p></option>
+                <option value="cykel"><p>Cykel</p></option>
+                <option value="gå"><p>Gå</p></option>
+              </select>
+            </div>
+
+            <div class="whitespace_bottom"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -116,51 +330,66 @@
       <a href="#/profile" class="nav-link">
         <button class="button button_back">Tilbage</button></a
       ><br /><br />
-      <h2>Rediger notifikationer</h2>
-      <div class="edit_notifications_page profile_page">
-        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
-        <div class="profile_link_div">
-        <p>Jeg vil modtage notifikationer om</p>
-        <label class="container"><p>Dagens beklædning</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Solen står op</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Solen går ned</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Det bliver stjerneklart</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Høje pollental</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Højt UV-ideks</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Islag</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        </label>
-        <label class="container"><p>Ekstremt vejr</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"><p>Dagens tip</p>
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
+      <div class="page-width">
+        <h2>Rediger notifikationer</h2>
+        <div class="edit_notifications_page profile_page">
+          <img
+            src="img/avatars/man_1_sun.png"
+            class="avatar"
+            alt="avatar icon"
+          />
+          <div class="profile_link_div">
+            <p>Jeg vil modtage notifikationer om</p>
+            <label class="container"
+              ><p>Dagens beklædning</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Solen står op</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Solen går ned</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Det bliver stjerneklart</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Høje pollental</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Højt UV-ideks</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Islag</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Ekstremt vejr</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Dagens tip</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="whitespace_bottom"></div>
+        </div>
       </div>
-        
-        <div class="whitespace_bottom"></div>
     </section>
 
     <!-- ------------------------------------------- profile page - delte profile ----------------------------------------- -->
@@ -171,96 +400,98 @@
       <a href="#/" class="nav-link">
         <button class="button button_back">Tilbage</button></a
       ><br /><br />
-      <div class="container_help">
-        <div class="flex">
-          <h2>Hjælp</h2>
-          <!-- --------------- HUSK AT INDSÆTTE LINK TIL WEB APP TUTORIAL HERUNDER I A HREF'EN --------------- -->
-          <a href=""
-            ><button class="button tutorial">Se Web App tutorial</button></a
-          >
-        </div>
-        <div class="whitespace"></div>
-        <div class="flex">
-          <h2>FAQ</h2>
+      <div class="page-width">
+        <div class="container_help">
+          <div>
+            <h2>Hjælp</h2>
+            <!-- --------------- HUSK AT INDSÆTTE LINK TIL WEB APP TUTORIAL HERUNDER I A HREF'EN --------------- -->
+            <a href=""
+              ><button class="button tutorial">Se Web App tutorial</button></a
+            >
+          </div>
+          <div class="whitespace"></div>
+          <div>
+            <h2>FAQ</h2>
 
-          <ul>
-            <li>
-              Skal jeg oprette en profil, for at bruge VelVejr?
-              <button type="button" class="showmore">&#10148;</button>
+            <ul>
+              <li>
+                Skal jeg oprette en profil, for at bruge VelVejr?
+                <button type="button" class="showmore">&#10148;</button>
 
-              <p class="p_showmore">
-                Nej, du kan benytte VelVejr uden at logge ind. Men det er en
-                fordel for dig, for at få en endnu mere præcis og personlig
-                vejledning.
-              </p>
-            </li>
+                <p class="p_showmore">
+                  Nej, du kan benytte VelVejr uden at logge ind. Men det er en
+                  fordel for dig, for at få en endnu mere præcis og personlig
+                  vejledning.
+                </p>
+              </li>
 
-            <li>
-              Kan jeg downloade Velvejr som en app?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                Nej, VelVejr er en webapp og kan derfor ikke downloades. I
-                stedet anbefaler vi,at du gemmer sitet ned som et bogmærke eller
-                føjer det til din hjemmeskærm i browseren, så VelVejr er let og
-                hurtig at tilgå.
-              </p>
-            </li>
+              <li>
+                Kan jeg downloade Velvejr som en app?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  Nej, VelVejr er en webapp og kan derfor ikke downloades. I
+                  stedet anbefaler vi,at du gemmer sitet ned som et bogmærke
+                  eller føjer det til din hjemmeskærm i browseren, så VelVejr er
+                  let og hurtig at tilgå.
+                </p>
+              </li>
 
-            <li>
-              Hvad koster VelVejr?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                VelVejr er en gratis gadget, som ikke koster noget, om du
-                opretter en profil eller ej.
-              </p>
-            </li>
+              <li>
+                Hvad koster VelVejr?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  VelVejr er en gratis gadget, som ikke koster noget, om du
+                  opretter en profil eller ej.
+                </p>
+              </li>
 
-            <li>
-              Hvor troværdig er VelVejr's vejrprognose?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                VelVejr's vejrprognose henter data fra ----,
-              </p>
-            </li>
+              <li>
+                Hvor troværdig er VelVejr's vejrprognose?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  VelVejr's vejrprognose henter data fra ----,
+                </p>
+              </li>
 
-            <li>
-              Hvad skal mine oplysninger bruges til?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                Oplysningerne hjælper VelVejr til at give en mere præcis og
-                personlig vejledning til dig.
-              </p>
-            </li>
+              <li>
+                Hvad skal mine oplysninger bruges til?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  Oplysningerne hjælper VelVejr til at give en mere præcis og
+                  personlig vejledning til dig.
+                </p>
+              </li>
 
-            <li>
-              Hvilke personoplysninger vil blive brugt?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                Vi behandler kun personoplysninger om dig, som du giver os for
-                at kunne opfylde vores aftale i forbindelse med dig.
-              </p>
-            </li>
+              <li>
+                Hvilke personoplysninger vil blive brugt?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  Vi behandler kun personoplysninger om dig, som du giver os for
+                  at kunne opfylde vores aftale i forbindelse med dig.
+                </p>
+              </li>
 
-            <li>
-              Hvordan behandles mine oplysninger?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                Dine personlige oplysninger vil være omfattet af beskyttelsen i
-                persondataforordningen. Sletter du din profil, vil dine
-                persondata blive destrueret. Indtil da er VelVejr ansvarlig for,
-                at dine personoplysninger opbevares sikkert.
-              </p>
-            </li>
+              <li>
+                Hvordan behandles mine oplysninger?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  Dine personlige oplysninger vil være omfattet af beskyttelsen
+                  i persondataforordningen. Sletter du din profil, vil dine
+                  persondata blive destrueret. Indtil da er VelVejr ansvarlig
+                  for, at dine personoplysninger opbevares sikkert.
+                </p>
+              </li>
 
-            <li>
-              Hvordan sletter jeg min profil?
-              <button type="button" class="showmore">&#10148;</button>
-              <p class="p_showmore">
-                Du kan slette din profil ved at trykke på smiley ikonet og “slet
-                profil” eller <a href="">klik her</a>.
-              </p>
-            </li>
-          </ul>
+              <li>
+                Hvordan sletter jeg min profil?
+                <button type="button" class="showmore">&#10148;</button>
+                <p class="p_showmore">
+                  Du kan slette din profil ved at trykke på smiley ikonet og
+                  “slet profil” eller <a href="">klik her</a>.
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

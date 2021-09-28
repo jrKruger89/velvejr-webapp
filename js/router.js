@@ -10,6 +10,10 @@ const routes = {
   "#/help": "help",
   "#/edit_profile": "edit_profile",
   "#/edit_notifications": "edit_notifications",
+  "#/homeMinusOne": "homeMinusOne",
+  "#/homePlusOne": "homePlusOne",
+  "#/homePlusTwo": "homePlusTwo",
+  "#/homePlusThree": "homePlusThree",
 };
 
 /**
