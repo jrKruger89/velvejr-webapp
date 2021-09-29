@@ -94,6 +94,8 @@ li {
 
 .page-width {
   margin: 0 5% 0 5%;
+  z-index: 1;
+  position: relative;
 }
 
 .left {
@@ -173,12 +175,20 @@ li {
 .page {
   display: none;
   min-height: calc(100vh - 55px);
+  /* background-image: url(../img/sky_2.png); */
+  background-position: center;
+  background-size: cover;
+}
+
+.animation {
+  width: 370px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 50%;
 }
 
 #home {
-  background-image: url(../img/sky_2.png);
-  background-position: center;
-  background-size: cover;
   min-height: 100vh;
 }
 .next_day,
@@ -201,6 +211,10 @@ li {
   align-items: center;
   justify-content: space-evenly;
   text-align: left;
+}
+
+.description {
+  margin: 10px auto;
 }
 
 /*----- help page -----*/

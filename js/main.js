@@ -1,9 +1,8 @@
 "use strict";
-
-import { getLocation } from "./weathermodule.js";
 import "./router.js";
-getLocation();
-
+import "./weathermodule.js";
+import "./usermodule.js";
+// ------------------------------- Home page search for city / get city -------------------------------
 // Open the full screen search box
 function openSearch() {
   document.getElementById("myOverlay").style.display = "block";
@@ -16,22 +15,7 @@ function closeSearch() {
 
 window.openSearch = () => openSearch();
 window.closeSearch = () => closeSearch();
-// ------------------------------- Help page show/hide answer with rotating arrow -------------------------------
-const buttons = Array.from(document.querySelectorAll(".showmore"));
-buttons.forEach((item) => {
-  item.addEventListener("click", () => {
-    if (item.nextElementSibling.style.display === "") {
-      item.nextElementSibling.style.display = "block";
-      item.style.transform = "rotate(90deg)";
-    } else {
-      item.nextElementSibling.style.display = "";
-      item.style.transform = "rotate(0deg)";
-    }
-  });
-});
-
-// -------------------------------------- Home page search/get location ----------------------------------------
-
+// -------------------------------------- Home page date + day + time ----------------------------------------
 //current date and time
 const monthNames = [
   "januar",
@@ -58,15 +42,16 @@ const weekDays = [
   "Lørdag",
 ];
 
-var today = new Date();
-var time = today.getHours();
+let today = new Date();
+let time = today.getHours();
 let date = `${weekDays[today.getDay()]} d. ${today.getDate()}. ${
   monthNames[today.getMonth()]
 } ${today.getFullYear()}`;
-var dateTime = date + " kl " + time;
+let dateTime = date + " kl " + time;
 document.getElementById("time").innerHTML = dateTime;
-
-var greeting = "";
+// -------------------------------------- Home page + today's info ----------------------------------------
+// greeting
+let greeting = "";
 
 if (time >= 17 && time <= 23) greeting = "Go' aften";
 else if (time >= 0 && time <= 5) greeting = "Go' nat";
@@ -75,17 +60,16 @@ else if (time >= 12 && time <= 16) greeting = "Go' eftermiddag";
 
 document.querySelector(".greeting").innerHTML = greeting;
 
-// avatar slideshow - edit profile
-var slideIndex = 1;
+// ------------------------------- Edit profile page -------------------------------
+// avatar slideshow
+let slideIndex = 1;
 showSlides(slideIndex);
-
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
-
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slides");
+  let i;
+  let slides = document.getElementsByClassName("slides");
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -101,3 +85,17 @@ function showSlides(n) {
 window.showSlides = () => showSlides();
 document.querySelector(".prev").onclick = () => plusSlides(-1);
 document.querySelector(".next").onclick = () => plusSlides(1);
+
+// ------------------------------- Help page show/hide answer with rotating arrow -------------------------------
+const buttons = Array.from(document.querySelectorAll(".showmore"));
+buttons.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (item.nextElementSibling.style.display === "") {
+      item.nextElementSibling.style.display = "block";
+      item.style.transform = "rotate(90deg)";
+    } else {
+      item.nextElementSibling.style.display = "";
+      item.style.transform = "rotate(0deg)";
+    }
+  });
+});

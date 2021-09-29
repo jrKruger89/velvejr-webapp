@@ -29,10 +29,11 @@
       /></a>
     </nav>
 
-    <!-- ---------------------------------------------------- home page ---------------------------------------------------- -->
+    <!-- ======================================================= home page ======================================================= -->
     <section id="home" class="page">
+      <img src="" class="animation" />
       <div class="page-width">
-        <div class="whitespace"></div>
+        <br />
         <div class="flex">
           <p id="by">Viser vejr for</p>
           <!-- search for city -->
@@ -66,7 +67,7 @@
 
         <!-- time and temp -->
         <div id="time"></div>
-        <p id="temp">Aktuel temp.</p>
+        <br />
         <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
 
         <!-- arrow - prev day/next day -->
@@ -86,10 +87,11 @@
         <p class="greeting"></p>
         <!-- <p class="hello_name"></p> -->
 
-        <!-- Husk xxxxx insættes her -->
-        <h2>Lorum ipsum</h2>
+        <!-- Weather description for today -->
+        <h2 class="description"></h2>
 
         <!-- max and chill temp for the day -->
+        <p id="temp">Aktuel temp.</p>
         <p class="max">Højest:</p>
         <p class="chill">Føles som:</p>
         <!-- <p class="important"></p> -->
@@ -97,10 +99,7 @@
 
         <!-- dagens tip indsættes her -->
         <p><b>Dagens tip:</b></p>
-        <p class="daytip">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore...
-        </p>
+        <p class="daytip"></p>
         <br />
 
         <!-- Read more about the weather -->
@@ -111,8 +110,8 @@
             <br />
             <div class="read_more_div">
               <div>
-                <div class="sun_up"><b>Sol op: </b></div>
-                <div class="sun_down"><b>Sol ned: </b></div>
+                <div class="sun_up"><b>Sol op:</b> kl.&nbsp;</div>
+                <div class="sun_down"><b>Sol ned:</b> kl.&nbsp;</div>
                 <div class="max"><b>Max temp:</b></div>
                 <div class="min"><b>Min. temp:</b></div>
                 <div class="chill"><b>Føles som:</b></div>
@@ -122,7 +121,7 @@
               <div>
                 <div class="rain"><b>Nedbør:</b></div>
                 <div class="wind"><b>Vind:</b></div>
-                <div class="gusts"><b>Vindstød:</b></div>
+                <div class="gust"><b>Vindstød:</b></div>
                 <div class="humidity"><b>Lufttugtighed:</b></div>
                 <div class="pollen"><b>Pollen:</b></div>
                 <div class="uv"><b>U.V-indeks:</b></div>
@@ -135,63 +134,71 @@
         <div class="whitespace_bottom_large"></div>
       </div>
     </section>
-    <!-- ------------------------------------------------- home page - prev day ------------------------------------------------- -->
+    <!-- ======================================================= home page - prev day ======================================================= -->
     <section id="homeMinusOne" class="page">
-      <a href="#/" class="nav-link"
-        ><button class="next_day right">
-          &#8250;
-          <p class="small_p">I dag</p>
-        </button>
-      </a>
+      <div class="page-width">
+        <a href="#/" class="nav-link"
+          ><button class="next_day right">
+            &#8250;
+            <p class="small_p">I dag</p>
+          </button>
+        </a>
 
-      margin top = pilene forsvinder
+        margin top = pilene forsvinder
+      </div>
     </section>
-    <!-- ------------------------------------------------- home page - next day ------------------------------------------------- -->
+    <!-- ======================================================= home page - next day ======================================================= -->
     <section id="homePlusOne" class="page">
-      <a href="#/homePlusTwo" class="nav-link"
-        ><button class="next_day right">
-          &#8250;
-          <p class="small_p">Næste dag</p>
-        </button>
-      </a>
+      <div class="page-width">
+        <a href="#/homePlusTwo" class="nav-link"
+          ><button class="next_day right">
+            &#8250;
+            <p class="small_p">Næste dag</p>
+          </button>
+        </a>
 
-      <a href="#/" class="nav-link"
-        ><button class="prev_day left">
-          &#8249;
-          <p class="small_p">I dag</p>
-        </button>
-      </a>
-      margin top = pilene forsvinder
+        <a href="#/" class="nav-link"
+          ><button class="prev_day left">
+            &#8249;
+            <p class="small_p">I dag</p>
+          </button>
+        </a>
+        margin top = pilene forsvinder
+      </div>
     </section>
 
-    <!-- ------------------------------------------------- home page - next next page -------------------------------------------- -->
+    <!-- ======================================================= home page - next next page ======================================================= -->
     <section id="homePlusTwo" class="page">
-      <a href="#/homePlusThree" class="nav-link"
-        ><button class="next_day right">
-          &#8250;
-          <p class="small_p">Næste dag</p>
-        </button>
-      </a>
+      <div class="page-width">
+        <a href="#/homePlusThree" class="nav-link"
+          ><button class="next_day right">
+            &#8250;
+            <p class="small_p">Næste dag</p>
+          </button>
+        </a>
 
-      <a href="#homePlusOne" class="nav-link"
-        ><button class="prev_day left">
-          &#8249;
-          <p class="small_p">Forrige dag</p>
-        </button>
-      </a>
+        <a href="#homePlusOne" class="nav-link"
+          ><button class="prev_day left">
+            &#8249;
+            <p class="small_p">Forrige dag</p>
+          </button>
+        </a>
+      </div>
     </section>
 
-    <!-- ------------------------------------------------- home page - next next next page -------------------------------------------- -->
+    <!-- ======================================================= home page - next next next page ======================================================= -->
     <section id="homePlusThree" class="page">
-      <a href="#/homePlusTwo" class="nav-link"
-        ><button class="prev_day left">
-          &#8249;
-          <p class="small_p">Forrige dag</p>
-        </button>
-      </a>
+      <div class="page-width">
+        <a href="#/homePlusTwo" class="nav-link"
+          ><button class="prev_day left">
+            &#8249;
+            <p class="small_p">Forrige dag</p>
+          </button>
+        </a>
+      </div>
     </section>
 
-    <!-- ------------------------------------------------- profile page ------------------------------------------------- -->
+    <!-- ======================================================= profile page ======================================================= -->
     <section id="profile" class="page">
       <a href="#/" class="nav-link">
         <button class="button button_back">Tilbage</button></a
@@ -217,7 +224,7 @@
       </div>
     </section>
 
-    <!-- ------------------------------------------- profile page - edit profile ---------------------------------------- -->
+    <!-- ======================================================= profile page - edit profile ======================================================= -->
     <section id="edit_profile" class="page">
       <a href="#/profile" class="nav-link">
         <button class="button button_back">Tilbage</button></a
@@ -325,7 +332,7 @@
       </div>
     </section>
 
-    <!-- ---------------------------------------- profile page - edit notifications ---------------------------------------- -->
+    <!-- ======================================================= profile page - edit notifications ======================================================= -->
     <section id="edit_notifications" class="page">
       <a href="#/profile" class="nav-link">
         <button class="button button_back">Tilbage</button></a
@@ -392,10 +399,10 @@
       </div>
     </section>
 
-    <!-- ------------------------------------------- profile page - delte profile ----------------------------------------- -->
+    <!-- ======================================================= profile page - delte profile ======================================================= -->
     <section id="edit_delete_profile" class="page"></section>
 
-    <!-- ---------------------------------------------------- help page ---------------------------------------------------- -->
+    <!-- ======================================================= help page ======================================================= -->
     <section id="help" class="page">
       <a href="#/" class="nav-link">
         <button class="button button_back">Tilbage</button></a
