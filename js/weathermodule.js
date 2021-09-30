@@ -98,17 +98,17 @@ let appendWeatherData = (data) => {
   );
 };
 
-let appendDailyWeather = (data1) => {
+let appendDailyWeather = (data) => {
   //"nattetemp."
   document.querySelector(
     ".night"
-  ).innerHTML += ` ${data1.daily[0].temp["night"]}ºC`;
+  ).innerHTML += ` ${data.daily[0].temp["night"]}ºC`;
   //"risiko for nedbør"
 
   //"nedbør"
-  document.querySelector(".rain").innerHTML += ` ${data1.daily[0]["rain"]} mm`;
+  document.querySelector(".rain").innerHTML += ` ${data.daily[0]["rain"]} mm`;
   //"uv"
-  document.querySelector(".uv").innerHTML += ` ${data1.current["uvi"]}`;
+  document.querySelector(".uv").innerHTML += ` ${data.current["uvi"]}`;
 };
 
 // ------------------------------- Converting fetched sun up/down data into DK-time -------------------------------

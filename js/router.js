@@ -14,6 +14,7 @@ const routes = {
   "#/homePlusOne": "homePlusOne",
   "#/homePlusTwo": "homePlusTwo",
   "#/homePlusThree": "homePlusThree",
+  "#/tutorial": "tutorial",
 };
 
 /**

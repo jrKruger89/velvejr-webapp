@@ -283,8 +283,34 @@
         </a>
       </div>
     </section>
+    <!-- ======================================================= Onboarding - tutorial====================================================== -->
+    <section id="tutorial" class="page">
+      <a href="#/tutorial" class="nav-link"></a>
+      <div class="page-width cloud">
+        <div class="whitespace_large"></div>
+        <button class="close_tutorial_btn">&#215;</button> <br />
+        <h2 class="textunderline">Velkommen til VelVejr</h2>
+        <p class="onboarding_text">
+          <b>På VelVejr kan du:</b><br /><br />
+          Få vejledning til hvilket tøj, der passer på dagens vejr.
+        </p>
 
-    <!-- ======================================================= profile page ======================================================= -->
+        <!-- arrow - prev/next -->
+        <a href="#/" class="nav-link"
+          ><button class="next_day right">&#8250;</button>
+        </a>
+
+        <div>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= profile page ============================================================== -->
     <section id="profile" class="page">
       <a href="#/" class="nav-link">
         <button class="button button_back">Tilbage</button></a
@@ -498,7 +524,7 @@
           <div>
             <h2>Hjælp</h2>
             <!-- --------------- HUSK AT INDSÆTTE LINK TIL WEB APP TUTORIAL HERUNDER I A HREF'EN --------------- -->
-            <a href=""
+            <a href="#/tutorial" class="nav-link"
               ><button class="button tutorial">Se Web App tutorial</button></a
             >
           </div>
@@ -542,7 +568,10 @@
                 Hvor troværdig er VelVejr's vejrprognose?
                 <button type="button" class="showmore">&#10148;</button>
                 <p class="p_showmore">
-                  VelVejr's vejrprognose henter data fra ----,
+                  VelVejr's vejrprognose henter data fra OpenWeather
+                  (openweathermap.org), der beror på flere vejrpronoser rundt om
+                  i verden og lover derfor, at deres prognoser er tæt på
+                  perfekte.
                 </p>
               </li>
 
