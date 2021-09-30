@@ -88,7 +88,7 @@
         <!-- <p class="hello_name"></p> -->
 
         <!-- Weather description for today -->
-        <h2 class="description"></h2>
+        <h2 class="description">I dag er der&nbsp;</h2>
 
         <!-- max and chill temp for the day -->
         <p id="temp">Aktuel temp.</p>
@@ -116,14 +116,14 @@
                 <div class="min"><b>Min. temp:</b></div>
                 <div class="chill"><b>Føles som:</b></div>
                 <div class="night"><b>Nattetemp.:</b></div>
-                <div class="risk_of_rain"><b>Risiko for nedbør:</b></div>
+                <div class="risk_of_rain"><b>Risiko for nedbør:</b> XX</div>
               </div>
               <div>
                 <div class="rain"><b>Nedbør:</b></div>
                 <div class="wind"><b>Vind:</b></div>
                 <div class="gust"><b>Vindstød:</b></div>
                 <div class="humidity"><b>Lufttugtighed:</b></div>
-                <div class="pollen"><b>Pollen:</b></div>
+                <div class="pollen"><b>Pollen:</b> XX</div>
                 <div class="uv"><b>U.V-indeks:</b></div>
                 <div class="visibility"><b>Sigtbarhed:</b></div>
               </div>
@@ -147,27 +147,113 @@
         margin top = pilene forsvinder
       </div>
     </section>
-    <!-- ======================================================= home page - next day ======================================================= -->
+    <!-- ======================================================= home page + one ======================================================= -->
     <section id="homePlusOne" class="page">
+      <img src="" class="animation" />
       <div class="page-width">
+        <br />
+        <div class="flex">
+          <p id="by">Viser vejr for</p>
+          <!-- search for city -->
+          <button class="button_search openBtn" onclick="openSearch()">
+            <img class="search-icon" src="img/search-icon.png" />
+          </button>
+        </div>
+        <div id="myOverlay" class="overlay">
+          <button
+            class="closebtn"
+            onclick="closeSearch()"
+            title="Close Overlay"
+          >
+            &#215;
+          </button>
+          <div class="overlay-content">
+            <form class="flex">
+              <input
+                class="input_search"
+                type="text"
+                placeholder="Indtast bynavn"
+                name="search"
+              />
+              <button class="button_search" type="submit">
+                Søg
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- time and temp -->
+        <div id="time"></div>
+        <br />
+        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+
+        <!-- arrow - prev day/next day -->
         <a href="#/homePlusTwo" class="nav-link"
           ><button class="next_day right">
             &#8250;
             <p class="small_p">Næste dag</p>
           </button>
         </a>
-
         <a href="#/" class="nav-link"
           ><button class="prev_day left">
             &#8249;
             <p class="small_p">I dag</p>
           </button>
         </a>
-        margin top = pilene forsvinder
+        <!-- gretting + name -->
+        <p class="greeting"></p>
+        <!-- <p class="hello_name"></p> -->
+
+        <!-- Weather description for today -->
+        <h2 class="description">Det bliver&nbsp;</h2>
+
+        <!-- max and chill temp for the day -->
+
+        <p class="max">Højest:</p>
+        <p class="chill">Føles som:</p>
+        <!-- <p class="important"></p> -->
+        <br />
+
+        <!-- dagens tip indsættes her -->
+        <p><b>Dagens tip:</b></p>
+        <p class="daytip"></p>
+        <br />
+
+        <!-- Read more about the weather -->
+        <div class="read_more_section">
+          <b>Læs mere om dagens vejr</b>
+          <button type="button" class="showmore">&#10148;</button>
+          <div class="p_showmore">
+            <br />
+            <div class="read_more_div">
+              <div>
+                <div class="sun_up"><b>Sol op:</b> kl.&nbsp;</div>
+                <div class="sun_down"><b>Sol ned:</b> kl.&nbsp;</div>
+                <div class="max"><b>Max temp:</b></div>
+                <div class="min"><b>Min. temp:</b></div>
+                <div class="chill"><b>Føles som:</b></div>
+                <div class="night"><b>Nattetemp.:</b></div>
+                <div class="risk_of_rain"><b>Risiko for nedbør:</b> XX</div>
+              </div>
+              <div>
+                <div class="rain"><b>Nedbør:</b></div>
+                <div class="wind"><b>Vind:</b></div>
+                <div class="gust"><b>Vindstød:</b></div>
+                <div class="humidity"><b>Lufttugtighed:</b></div>
+                <div class="pollen"><b>Pollen:</b> XX</div>
+                <div class="uv"><b>U.V-indeks:</b></div>
+                <div class="visibility"><b>Sigtbarhed:</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="whitespace_bottom_large"></div>
       </div>
     </section>
 
-    <!-- ======================================================= home page - next next page ======================================================= -->
+    <!-- ======================================================= home page + two ======================================================= -->
     <section id="homePlusTwo" class="page">
       <div class="page-width">
         <a href="#/homePlusThree" class="nav-link"
@@ -186,7 +272,7 @@
       </div>
     </section>
 
-    <!-- ======================================================= home page - next next next page ======================================================= -->
+    <!-- ======================================================= home page + three ======================================================= -->
     <section id="homePlusThree" class="page">
       <div class="page-width">
         <a href="#/homePlusTwo" class="nav-link"
