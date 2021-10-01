@@ -27,6 +27,7 @@ let loadDailyWeather = async (lat, lon) => {
   weatherChange("#homePlusOne", 1, _daily_weather_data);
   weatherChange("#homePlusTwo", 2, _daily_weather_data);
   weatherChange("#homePlusThree", 3, _daily_weather_data);
+  searchCity(_current_weather_data);
 };
 // ------------------------------- Getting location with geoLocation -------------------------------
 window.getLocation = () => {
@@ -81,9 +82,15 @@ function appendDaily(sectionId, index, data, data2) {
 
   //city
   let appendCity = "";
-  appendCity += `<p class="by">Viser vejr for ${data2.name}</p>`;
+  appendCity += /*html*/ `<p class="by">Viser vejr for ${data2.name}</p>`;
   document.querySelector(`${sectionId} .by`).innerHTML = appendCity;
 }
+
+let searchCity = (data) => {
+  for (const city of data) {
+    console.log(city.main.name, city.coords.lat, city.coords.lom);
+  }
+};
 // ------------------------------- Converting fetched sun up/down data into DK-time -------------------------------
 function format_time(s) {
   const dtFormat = new Intl.DateTimeFormat("da-DK", {

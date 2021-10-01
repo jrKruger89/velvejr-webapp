@@ -4,17 +4,49 @@ import "./weathermodule.js";
 import "./usermodule.js";
 // ------------------------------- Home page search for city / get city -------------------------------
 // Open the full screen search box
-function openSearch() {
-  document.querySelector(".overlay").style.display = "block";
-}
 
-// Close the full screen search box
-function closeSearch() {
-  document.querySelector(".overlay").style.display = "none";
-}
+// Jeg giver op! Raaaaaaasmuuuuuuus!!!!
+document.querySelector("#home .openBtn").addEventListener("click", () => {
+  document.querySelector("#home .overlay").style.display = "block";
+});
 
-window.openSearch = () => openSearch();
-window.closeSearch = () => closeSearch();
+document.querySelector("#home .closebtn").addEventListener("click", () => {
+  document.querySelector("#home .overlay").style.display = "none";
+});
+document
+  .querySelector("#homePlusOne .openBtn")
+  .addEventListener("click", () => {
+    document.querySelector("#homePlusOne .overlay").style.display = "block";
+  });
+
+document
+  .querySelector("#homePlusOne .closebtn")
+  .addEventListener("click", () => {
+    document.querySelector("#homePlusOne .overlay").style.display = "none";
+  });
+document
+  .querySelector("#homePlusTwo .openBtn")
+  .addEventListener("click", () => {
+    document.querySelector("#homePlusTwo .overlay").style.display = "block";
+  });
+
+document
+  .querySelector("#homePlusTwo .closebtn")
+  .addEventListener("click", () => {
+    document.querySelector("#homePlusTwo .overlay").style.display = "none";
+  });
+document
+  .querySelector("#homePlusThree .openBtn")
+  .addEventListener("click", () => {
+    document.querySelector("#homePlusThree .overlay").style.display = "block";
+  });
+
+document
+  .querySelector("#homePlusThree .closebtn")
+  .addEventListener("click", () => {
+    document.querySelector("#homePlusThree .overlay").style.display = "none";
+  });
+
 // -------------------------------------- Home page date + day + time ----------------------------------------
 //current date and time
 
