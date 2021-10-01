@@ -5,18 +5,19 @@ import "./usermodule.js";
 // ------------------------------- Home page search for city / get city -------------------------------
 // Open the full screen search box
 function openSearch() {
-  document.getElementById("myOverlay").style.display = "block";
+  document.querySelector(".overlay").style.display = "block";
 }
 
 // Close the full screen search box
 function closeSearch() {
-  document.getElementById("myOverlay").style.display = "none";
+  document.querySelector(".overlay").style.display = "none";
 }
 
 window.openSearch = () => openSearch();
 window.closeSearch = () => closeSearch();
 // -------------------------------------- Home page date + day + time ----------------------------------------
 //current date and time
+
 const monthNames = [
   "januar",
   "februar",
@@ -49,6 +50,27 @@ let date = `${weekDays[today.getDay()]} d. ${today.getDate()}. ${
 } ${today.getFullYear()}`;
 let dateTime = date + " kl " + time;
 document.getElementById("time").innerHTML = dateTime;
+
+let dateTimePlusOne = `${weekDays[(today.getDay() + 1) % 7]} d. ${
+  today.getDate() + 1
+}. ${monthNames[today.getMonth()]} ${today.getFullYear()}`;
+document.getElementById("timePlusOne").innerHTML = dateTimePlusOne;
+
+let dateTimePlusTwo = `${weekDays[(today.getDay() + 2) % 7]} d. ${
+  today.getDate() + 2
+}. ${monthNames[today.getMonth()]} ${today.getFullYear()}`;
+document.getElementById("timePlusTwo").innerHTML = dateTimePlusTwo;
+
+let dateTimePlusThree = `${weekDays[(today.getDay() + 3) % 7]} d. ${
+  today.getDate() + 3
+}. ${monthNames[today.getMonth()]} ${today.getFullYear()}`;
+document.getElementById("timePlusThree").innerHTML = dateTimePlusThree;
+
+let dateTimeMinusOne = `${weekDays[(today.getDay() - 1) % 7]} d. ${
+  today.getDate() - 1
+}. ${monthNames[today.getMonth()]} ${today.getFullYear()}`;
+document.getElementById("timeMinusOne").innerHTML = dateTimeMinusOne;
+
 // -------------------------------------- Home page + today's info ----------------------------------------
 // greeting
 let greeting = "";

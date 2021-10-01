@@ -10,7 +10,6 @@
 
   /*----- DESKTOP VARIABLES -----*/
 }
-
 /*----- GENERAL STYLING -----*/
 
 html {
@@ -47,6 +46,10 @@ ul {
 }
 
 #time,
+#timePlusOne,
+#timePlusTwo,
+#timePlusThree,
+#timeMinusOne,
 select,
 input,
 li,
@@ -89,6 +92,9 @@ li {
 .whitespace {
   height: 25px;
 }
+.whitespace_30px {
+  height: 30px;
+}
 .whitespace_large {
   height: 75px;
 }
@@ -125,6 +131,7 @@ li {
   }
 
   #time,
+  #timePlusOne,
   li,
   p {
     font-size: 22px;
@@ -181,7 +188,7 @@ li {
 /* ---------- home page styling ---------- */
 .page {
   display: none;
-  min-height: calc(100vh - 55px);
+  min-height: 100vh;
   /* background-image: url(../img/sky_2.png); */
   background-position: center;
   background-size: cover;
@@ -220,9 +227,15 @@ li {
   text-align: left;
 }
 
-.description {
+.description,
+.weatherDataDay {
   margin: 10px auto;
 }
+
+.currentdaytext {
+  height: 37px;
+}
+
 /* ---------- Onboarding - tutorial ---------- */
 .cloud {
   background-image: url(../img/cloud-mobil.png);

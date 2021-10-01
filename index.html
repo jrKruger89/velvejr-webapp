@@ -35,7 +35,7 @@
       <div class="page-width">
         <br />
         <div class="flex">
-          <p id="by">Viser vejr for</p>
+          <p class="by"></p>
           <!-- search for city -->
           <button class="button_search openBtn" onclick="openSearch()">
             <img class="search-icon" src="img/search-icon.png" />
@@ -88,14 +88,7 @@
         <!-- <p class="hello_name"></p> -->
 
         <!-- Weather description for today -->
-        <h2 class="description">I dag er der&nbsp;</h2>
-
-        <!-- max and chill temp for the day -->
-        <p id="temp">Aktuel temp.</p>
-        <p class="max">Højest:</p>
-        <p class="chill">Føles som:</p>
-        <!-- <p class="important"></p> -->
-        <br />
+        <div class="weatherDataDay"></div>
 
         <!-- dagens tip indsættes her -->
         <p><b>Dagens tip:</b></p>
@@ -109,25 +102,6 @@
           <div class="p_showmore">
             <br />
             <div class="read_more_div">
-              <div>
-                <div class="sun_up"><b>Sol op:</b> kl.&nbsp;</div>
-                <div class="sun_down"><b>Sol ned:</b> kl.&nbsp;</div>
-                <div class="max"><b>Max temp:</b></div>
-                <div class="min"><b>Min. temp:</b></div>
-                <div class="chill"><b>Føles som:</b></div>
-                <div class="night"><b>Nattetemp.:</b></div>
-                <div class="risk_of_rain"><b>Risiko for nedbør:</b> XX</div>
-              </div>
-              <div>
-                <div class="rain"><b>Nedbør:</b></div>
-                <div class="wind"><b>Vind:</b></div>
-                <div class="gust"><b>Vindstød:</b></div>
-                <div class="humidity"><b>Lufttugtighed:</b></div>
-                <div class="pollen"><b>Pollen:</b> XX</div>
-                <div class="uv"><b>U.V-indeks:</b></div>
-                <div class="visibility"><b>Sigtbarhed:</b></div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -135,17 +109,48 @@
       </div>
     </section>
     <!-- ======================================================= home page - prev day ======================================================= -->
-    <section id="homeMinusOne" class="page">
-      <div class="page-width">
-        <a href="#/" class="nav-link"
-          ><button class="next_day right">
-            &#8250;
-            <p class="small_p">I dag</p>
-          </button>
-        </a>
+    <section id="homeMinusOne"  class="page">
+        
+        <div class="page-width">
+          <br />
+            <p class="currentdaytext">Dagen igår</p>
+  
+          <!-- time and temp -->
+          <div id="timeMinusOne"></div>
+          <br />
+          <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+  
+          <!-- arrow - prev day/next day -->
+            <a href="#/" class="nav-link"
+              ><button class="next_day right">
+                &#8250;
+                <p class="small_p">I dag</p>
+              </button>
+            </a>
 
-        margin top = pilene forsvinder
-      </div>
+            <h2>Hvordan var dagen igår?</h2>
+            <div class="profile_link_div">
+            <p>VelVejrs anbefaling af tøjvalg passede mig</p>
+            <div class="whitespace"></div>
+            <label class="container"
+              ><p>Perfekt</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Passende</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><p>Dårligt</p>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+              <div class="whitespace"></div>
+              </div>
+            <button class="button">Gem feedback</button>
+          <div class="whitespace_bottom_large"></div>
     </section>
     <!-- ======================================================= home page + one ======================================================= -->
     <section id="homePlusOne" class="page">
@@ -153,7 +158,7 @@
       <div class="page-width">
         <br />
         <div class="flex">
-          <p id="by">Viser vejr for</p>
+          <p class="by"></p>
           <!-- search for city -->
           <button class="button_search openBtn" onclick="openSearch()">
             <img class="search-icon" src="img/search-icon.png" />
@@ -184,7 +189,7 @@
         </div>
 
         <!-- time and temp -->
-        <div id="time"></div>
+        <div id="timePlusOne"></div>
         <br />
         <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
 
@@ -202,18 +207,11 @@
           </button>
         </a>
         <!-- gretting + name -->
-        <p class="greeting"></p>
+        <div class="whitespace_30px"></div>
         <!-- <p class="hello_name"></p> -->
 
         <!-- Weather description for today -->
-        <h2 class="description">Det bliver&nbsp;</h2>
-
-        <!-- max and chill temp for the day -->
-
-        <p class="max">Højest:</p>
-        <p class="chill">Føles som:</p>
-        <!-- <p class="important"></p> -->
-        <br />
+        <div class="weatherDataDay"></div>
 
         <!-- dagens tip indsættes her -->
         <p><b>Dagens tip:</b></p>
@@ -227,25 +225,6 @@
           <div class="p_showmore">
             <br />
             <div class="read_more_div">
-              <div>
-                <div class="sun_up"><b>Sol op:</b> kl.&nbsp;</div>
-                <div class="sun_down"><b>Sol ned:</b> kl.&nbsp;</div>
-                <div class="max"><b>Max temp:</b></div>
-                <div class="min"><b>Min. temp:</b></div>
-                <div class="chill"><b>Føles som:</b></div>
-                <div class="night"><b>Nattetemp.:</b></div>
-                <div class="risk_of_rain"><b>Risiko for nedbør:</b> XX</div>
-              </div>
-              <div>
-                <div class="rain"><b>Nedbør:</b></div>
-                <div class="wind"><b>Vind:</b></div>
-                <div class="gust"><b>Vindstød:</b></div>
-                <div class="humidity"><b>Lufttugtighed:</b></div>
-                <div class="pollen"><b>Pollen:</b> XX</div>
-                <div class="uv"><b>U.V-indeks:</b></div>
-                <div class="visibility"><b>Sigtbarhed:</b></div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -255,7 +234,46 @@
 
     <!-- ======================================================= home page + two ======================================================= -->
     <section id="homePlusTwo" class="page">
+      <img src="" class="animation" />
       <div class="page-width">
+        <br />
+        <div class="flex">
+          <p class="by"></p>
+          <!-- search for city -->
+          <button class="button_search openBtn" onclick="openSearch()">
+            <img class="search-icon" src="img/search-icon.png" />
+          </button>
+        </div>
+        <div id="myOverlay" class="overlay">
+          <button
+            class="closebtn"
+            onclick="closeSearch()"
+            title="Close Overlay"
+          >
+            &#215;
+          </button>
+          <div class="overlay-content">
+            <form class="flex">
+              <input
+                class="input_search"
+                type="text"
+                placeholder="Indtast bynavn"
+                name="search"
+              />
+              <button class="button_search" type="submit">
+                Søg
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- time and temp -->
+        <div id="timePlusTwo"></div>
+        <br />
+        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+
+        <!-- arrow - prev day/next day -->
         <a href="#/homePlusThree" class="nav-link"
           ><button class="next_day right">
             &#8250;
@@ -263,24 +281,111 @@
           </button>
         </a>
 
-        <a href="#homePlusOne" class="nav-link"
+        <a href="#/homePlusOne" class="nav-link"
           ><button class="prev_day left">
             &#8249;
             <p class="small_p">Forrige dag</p>
           </button>
         </a>
+        <!-- gretting + name -->
+        <div class="whitespace_30px"></div>
+        <!-- <p class="hello_name"></p> -->
+
+        <!-- Weather description for today -->
+        <div class="weatherDataDay"></div>
+
+        <!-- dagens tip indsættes her -->
+        <p><b>Dagens tip:</b></p>
+        <p class="daytip"></p>
+        <br />
+
+        <!-- Read more about the weather -->
+        <div class="read_more_section">
+          <b>Læs mere om dagens vejr</b>
+          <button type="button" class="showmore">&#10148;</button>
+          <div class="p_showmore">
+            <br />
+            <div class="read_more_div">
+          </div>
+        </div>
+
+        <div class="whitespace_bottom_large"></div>
       </div>
     </section>
 
     <!-- ======================================================= home page + three ======================================================= -->
     <section id="homePlusThree" class="page">
+      <img src="" class="animation" />
       <div class="page-width">
+        <br />
+        <div class="flex">
+          <p class="by"></p>
+          <!-- search for city -->
+          <button class="button_search openBtn" onclick="openSearch()">
+            <img class="search-icon" src="img/search-icon.png" />
+          </button>
+        </div>
+        <div id="myOverlay" class="overlay">
+          <button
+            class="closebtn"
+            onclick="closeSearch()"
+            title="Close Overlay"
+          >
+            &#215;
+          </button>
+          <div class="overlay-content">
+            <form class="flex">
+              <input
+                class="input_search"
+                type="text"
+                placeholder="Indtast bynavn"
+                name="search"
+              />
+              <button class="button_search" type="submit">
+                Søg
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- time and temp -->
+        <div id="timePlusThree"></div>
+        <br />
+        <img src="img/avatars/man_1_sun.png" class="avatar" alt="avatar icon" />
+
+        <!-- arrow - prev day -->
         <a href="#/homePlusTwo" class="nav-link"
           ><button class="prev_day left">
             &#8249;
             <p class="small_p">Forrige dag</p>
           </button>
         </a>
+
+        
+        <!-- gretting + name -->
+        <div class="whitespace_30px"></div>
+        <!-- <p class="hello_name"></p> -->
+
+        <!-- Weather description for today -->
+        <div class="weatherDataDay"></div>
+
+        <!-- dagens tip indsættes her -->
+        <p><b>Dagens tip:</b></p>
+        <p class="daytip"></p>
+        <br />
+
+        <!-- Read more about the weather -->
+        <div class="read_more_section">
+          <b>Læs mere om dagens vejr</b>
+          <button type="button" class="showmore">&#10148;</button>
+          <div class="p_showmore">
+            <br />
+            <div class="read_more_div">
+          </div>
+        </div>
+
+        <div class="whitespace_bottom_large"></div>
       </div>
     </section>
     <!-- ======================================================= Onboarding - tutorial====================================================== -->
