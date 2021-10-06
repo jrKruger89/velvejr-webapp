@@ -8,54 +8,49 @@ let url;
 let cityName = "";
 
 let loadWeather = async (lat, lon) => {
-    url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${api_key}&lang=da`;
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    _current_weather_data = data;
+  url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${api_key}&lang=da`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  _current_weather_data = data;
 };
 
 //daily weather data by longitude + latitude
 let loadDailyWeather = async (lat, lon) => {
-    url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${api_key}&lang=da`;
+  url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${api_key}&lang=da`;
 
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    _daily_weather_data = data;
-    appendDaily("#home", 0, _daily_weather_data, _current_weather_data);
-    appendDaily("#homePlusOne", 1, _daily_weather_data, _current_weather_data);
-    appendDaily("#homePlusTwo", 2, _daily_weather_data, _current_weather_data);
-    appendDaily(
-        "#homePlusThree",
-        3,
-        _daily_weather_data,
-        _current_weather_data
-    );
-    // to give the weatherChange func data
-    weatherChange("#home", 0, _daily_weather_data);
-    weatherChange("#homePlusOne", 1, _daily_weather_data);
-    weatherChange("#homePlusTwo", 2, _daily_weather_data);
-    weatherChange("#homePlusThree", 3, _daily_weather_data);
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  _daily_weather_data = data;
+  appendDaily("#home", 0, _daily_weather_data, _current_weather_data);
+  appendDaily("#homePlusOne", 1, _daily_weather_data, _current_weather_data);
+  appendDaily("#homePlusTwo", 2, _daily_weather_data, _current_weather_data);
+  appendDaily("#homePlusThree", 3, _daily_weather_data, _current_weather_data);
+  // to give the weatherChange func data
+  weatherChange("#home", 0, _daily_weather_data);
+  weatherChange("#homePlusOne", 1, _daily_weather_data);
+  weatherChange("#homePlusTwo", 2, _daily_weather_data);
+  weatherChange("#homePlusThree", 3, _daily_weather_data);
 };
 // ------------------------------- Getting location with geoLocation -------------------------------
 window.getLocation = () => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setPosition);
-    } else {
-        console.log("Geolocation is not supported by this browser.");
-    }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setPosition);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
 };
 // position latitude and longitude are used to call the data from loadWeather for the specifik location
 let setPosition = (position) => {
-    loadWeather(position.coords.latitude, position.coords.longitude);
-    loadDailyWeather(position.coords.latitude, position.coords.longitude);
+  loadWeather(position.coords.latitude, position.coords.longitude);
+  loadDailyWeather(position.coords.latitude, position.coords.longitude);
 };
 getLocation();
 // ------------------------------- Using fetched data and appending values to the DOM -------------------------------
 function appendDaily(sectionId, index, data, data2) {
-    let htmlTemplateShowMore = "";
-    htmlTemplateShowMore += /*html*/ `
+  let htmlTemplateShowMore = "";
+  htmlTemplateShowMore += /*html*/ `
     <article>
     <p><b>Sol op: kl. </b>${format_time(data.daily[index].sunrise)}</p>
     <p><b>Sol ned: kl. </b>${format_time(data.daily[index].sunset)}</p>
@@ -75,115 +70,117 @@ function appendDaily(sectionId, index, data, data2) {
     <p><b>Sigtbarhed: </b>${data.current.visibility}m</p>
   </article>
     `;
-    document.querySelector(`${sectionId} .read_more_div`).innerHTML =
-        htmlTemplateShowMore;
+  document.querySelector(`${sectionId} .read_more_div`).innerHTML =
+    htmlTemplateShowMore;
 
-    let htmlTemplateCurrent = "";
-    htmlTemplateCurrent += /*html*/ `
+  let htmlTemplateCurrent = "";
+  htmlTemplateCurrent += /*html*/ `
     <article>
     <h2 class="description">Det bliver ${data.daily[index].weather[0].description}</h2>
     <p>Dags temp.: ${data.daily[index].temp.day}ºC</p>
     <p>Føles som: ${data.daily[index].feels_like.day}ºC</p>
     </article>
   `;
-    document.querySelector(`${sectionId} .weatherDataDay`).innerHTML =
-        htmlTemplateCurrent;
+  document.querySelector(`${sectionId} .weatherDataDay`).innerHTML =
+    htmlTemplateCurrent;
 
-    //city
-    let appendCity = "";
-    appendCity += /*html*/ `<p class="by">Viser vejr for ${data2.name}</p>`;
-    document.querySelector(`${sectionId} .by`).innerHTML = appendCity;
+  //city
+  let appendCity = "";
+  appendCity += /*html*/ `<p class="by">Viser vejr for ${data2.name}</p>`;
+  document.querySelector(`${sectionId} .by`).innerHTML = appendCity;
 }
 
 async function setNewLocation() {
-    cityName = document.querySelector(".input_search").value;
-    url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${api_key}&lang=da`;
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
+  cityName = document.querySelector(".input_search").value;
+  url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${api_key}&lang=da`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
 
-    _weather_by_city = data;
-    _current_weather_data = _weather_by_city;
-    loadDailyWeather(data.coord.lat, data.coord.lon);
+  _weather_by_city = data;
+  _current_weather_data = _weather_by_city;
+  loadDailyWeather(data.coord.lat, data.coord.lon);
+  document.querySelector("#home .overlay").style.display = "none";
+  document.querySelector(".input_search").value = "";
 }
 
 window.setNewLocation = () => setNewLocation();
 
 // ------------------------------- Converting fetched sun up/down data into DK-time -------------------------------
 function format_time(s) {
-    const dtFormat = new Intl.DateTimeFormat("da-DK", {
-        timeStyle: "short",
-        timeZone: "Europe/Copenhagen",
-    });
+  const dtFormat = new Intl.DateTimeFormat("da-DK", {
+    timeStyle: "short",
+    timeZone: "Europe/Copenhagen",
+  });
 
-    return dtFormat.format(new Date(s * 1e3));
+  return dtFormat.format(new Date(s * 1e3));
 }
 // ------------------------------- Using weatherdata for background + avatar + "dagens tip" -------------------------------
 // Change background + animation based on the weather
 function weatherChange(sectionId, index, weather) {
-    let page = document.querySelector(`${sectionId}`);
-    let animation = document.querySelector(`${sectionId} .animation`);
-    let daytip = document.querySelector(`${sectionId} .daytip`);
-    let weatherDescription = weather.daily[index].weather[0].main;
+  let page = document.querySelector(`${sectionId}`);
+  let animation = document.querySelector(`${sectionId} .animation`);
+  let daytip = document.querySelector(`${sectionId} .daytip`);
+  let weatherDescription = weather.daily[index].weather[0].main;
 
-    setWeatherSun(page, animation, daytip);
+  setWeatherSun(page, animation, daytip);
 
-    if (weatherDescription == "Rain") {
-        setWeatherRain(page, animation, daytip);
-    } else if (weatherDescription == "Thunderstorm") {
-        setWeatherThunder(page, animation, daytip);
-    } else if (weatherDescription == "Snow") {
-        setWeatherSnow(page, animation, daytip);
-    } else if (weatherDescription == "Atmosphere") {
-        setWeatherAtmosphere(page, animation, daytip);
-    } else if (weatherDescription == "Drizzle") {
-        setWeatherDrizzle(page, animation, daytip);
-    } else {
-        setWeatherClouds(page, animation, daytip);
-    }
+  if (weatherDescription == "Rain") {
+    setWeatherRain(page, animation, daytip);
+  } else if (weatherDescription == "Thunderstorm") {
+    setWeatherThunder(page, animation, daytip);
+  } else if (weatherDescription == "Snow") {
+    setWeatherSnow(page, animation, daytip);
+  } else if (weatherDescription == "Atmosphere") {
+    setWeatherAtmosphere(page, animation, daytip);
+  } else if (weatherDescription == "Drizzle") {
+    setWeatherDrizzle(page, animation, daytip);
+  } else {
+    setWeatherClouds(page, animation, daytip);
+  }
 }
 
 let setWeatherRain = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_4.png)";
-    animation.src = "../img/rain.gif";
-    daytip.innerHTML = "Husk regnjakken, så du ikke bliver våd!";
+  page.style.backgroundImage = "url(../img/sky_4.png)";
+  animation.src = "../img/rain.gif";
+  daytip.innerHTML = "Husk regnjakken, så du ikke bliver våd!";
 };
 
 let setWeatherThunder = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_4.png)";
-    animation.src = "../img/lightning.gif";
-    daytip.innerHTML = "Bliv indenfor - det bliver buldervejr!";
+  page.style.backgroundImage = "url(../img/sky_4.png)";
+  animation.src = "../img/lightning.gif";
+  daytip.innerHTML = "Bliv indenfor - det bliver buldervejr!";
 };
 
 let setWeatherSnow = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_3.png)";
-    animation.src = "../img/snow.gif";
-    daytip.innerHTML = "Få vinterjakken på idag - det bliver snevejr!";
+  page.style.backgroundImage = "url(../img/sky_3.png)";
+  animation.src = "../img/snow.gif";
+  daytip.innerHTML = "Få vinterjakken på idag - det bliver snevejr!";
 };
 
 let setWeatherAtmosphere = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_3.png)";
-    animation.style.display = "none";
-    daytip.innerHTML =
-        "Måske du skulle overveje nogle ekstra reflekser idag, så du tydeligt kan ses!";
+  page.style.backgroundImage = "url(../img/sky_3.png)";
+  animation.style.display = "none";
+  daytip.innerHTML =
+    "Måske du skulle overveje nogle ekstra reflekser idag, så du tydeligt kan ses!";
 };
 
 let setWeatherDrizzle = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_3.png)";
-    animation.style.display = "none";
-    daytip.innerHTML = "Medbring en paraply eller vandafvisende jakke idag!";
+  page.style.backgroundImage = "url(../img/sky_3.png)";
+  animation.style.display = "none";
+  daytip.innerHTML = "Medbring en paraply eller vandafvisende jakke idag!";
 };
 
 let setWeatherClouds = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_3.png)";
-    animation.style.display = "none";
-    daytip.innerHTML =
-        "En let trøje er fin idag, men medbring evt. en jakke, for en sikkerhedsskyld!";
+  page.style.backgroundImage = "url(../img/sky_3.png)";
+  animation.style.display = "none";
+  daytip.innerHTML =
+    "En let trøje er fin idag, men medbring evt. en jakke, for en sikkerhedsskyld!";
 };
 
 let setWeatherSun = (page, animation, daytip) => {
-    page.style.backgroundImage = "url(../img/sky_1.png)";
-    animation.src = "../img/sun.gif";
-    daytip.innerHTML =
-        "På med solcreme, solbriller og t-shirt - det bliver solrigt idag!";
+  page.style.backgroundImage = "url(../img/sky_1.png)";
+  animation.src = "../img/sun.gif";
+  daytip.innerHTML =
+    "På med solcreme, solbriller og t-shirt - det bliver solrigt idag!";
 };
